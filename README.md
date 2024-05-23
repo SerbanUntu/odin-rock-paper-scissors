@@ -15,3 +15,16 @@ switch(humanChoice + computerChoice) {
 ```
 
 Another thing I learned was that newlines are respected in backtick strings without needing to add the `\n` character.
+
+For the UI implementation: using the id of the buttons as the input values is a nice trick:
+```html
+<button id="rock">Rock</button>
+<button id="paper">Paper</button>
+<button id="scissors">Scissors</button>
+```
+```js
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  playRound(capitalize(button.id), getComputerChoice());
+});
+```
